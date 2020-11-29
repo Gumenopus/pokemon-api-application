@@ -1,11 +1,11 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
-import Pokemons from '../pages/pokemons';
+import { Switch, Route } from 'react-router-dom';
+import Layout from '../pages/home/Layout';
 
-export const Routes: React.FC = () => {
-    return(
-        <Switch>
-            <Route path="/" exact component={Pokemons}/>
-        </Switch>
-    );
+export default function Routes() {
+  return (
+    <Switch>
+      <Route path="/" exact component={Layout} />
+    </Switch>
+  );
 }
