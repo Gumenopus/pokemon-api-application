@@ -11,7 +11,7 @@ const CardPokemon = () => {
   return (
     <Grid container item xs={3} spacing={3} className={container}>
       <Paper elevation={1} className={textStyle}>
-        This is my paper text!
+        Here I need my function to get the Props!
         <CharmanderIcon />
       </Paper>
     </Grid>
