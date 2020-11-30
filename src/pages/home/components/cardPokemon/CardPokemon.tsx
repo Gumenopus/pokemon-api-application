@@ -2,40 +2,56 @@ import React, { useState } from 'react';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 import api from 'api/api';
 
-import Props from 'pages/home/types/Pokemon.type';
-
 import useStyles from './CardPokemon.styles';
+
 import CharmanderIcon from '../assets/pokemonAsset/PokemonIcon';
 
+interface Props {
+  id: number;
+  name: string;
+  weight: number;
+  sprites: {
+    front_default: string;
+  };
+}
+
 const CardPokemon = () => {
+  // TODO... function is been called a lot of times for some reason... even if I call
+  // it just one time
   const { container, textStyle } = useStyles();
-  // eslint-disable-next-line no-unused-vars
-  const [id, setId] = useState(0);
-  // eslint-disable-next-line no-unused-vars
-  const [image, setImage] = useState('');
-  const [height, setHeight] = useState(0);
+  const [pokemons, setPokemons] = useState<Props[]>([]);
 
-  async function getPokemonInformations(pokemon: string): Promise<void> {
-    const response = await api.get<Props>(`/pokemon/${pokemon}`);
-
-    setId(response.data.id);
-    setHeight(response.data.height);
-    setImage(response.data.sprites.front_default);
+  async function addPokemonInList(id: number): Promise<void> {
+    const response = await api.get<Props>(`/pokemon/${id}`);
+    // testing...
+    if (pokemons.length === 0) {
+      setPokemons([response.data]);
+    } else {
+      setPokemons([...pokemons, response.data]);
+    }
   }
 
-  getPokemonInformations('ditto');
+  addPokemonInList(445);
+
+  pokemons.forEach(it => {
+    console.log(it.name);
+  });
 
   return (
-    <Grid container item xs={3} spacing={3} className={container}>
-      <Paper elevation={1} className={textStyle}>
-        <Typography>Peso: {height}kg</Typography>
-        <CharmanderIcon src={image} />
-      </Paper>
-    </Grid>
+    <>
+      {pokemons.forEach(it => {
+        <Grid container item xs={3} spacing={3} className={container}>
+          <Paper elevation={1} className={textStyle}>
+            <Typography>Peso: {it.weight}kg</Typography>
+            <CharmanderIcon src={it.sprites.front_default} />
+          </Paper>
+        </Grid>;
+      })}
+    </>
   );
 };
 
