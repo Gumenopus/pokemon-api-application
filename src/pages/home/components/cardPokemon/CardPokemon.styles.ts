@@ -14,6 +14,8 @@ const useStyles = makeStyles(() =>
       paddingRight: '10px',
       paddingLeft: '10px',
       paddingBottom: '10px',
+
+      font: '16px Roboto, sans-serif',
     },
   }),
 );
