@@ -1,16 +1,13 @@
 import React from 'react';
-
 import useStyles from './PokemonIcon.styles';
 
-const CharmanderIcon = () => {
-  const { container } = useStyles();
+interface Props {
+  src: string;
+}
 
-  return (
-    <img
-      alt="charmander"
-      src="https://cdn.bulbagarden.net/upload/7/73/004Charmander.png"
-      className={container}
-    />
-  );
+const CharmanderIcon = ({ src }: Props) => {
+  const { container } = useStyles();
+  return <img alt="charmander" src={src} className={container} />;
 };
+
 export default CharmanderIcon;

@@ -6,14 +6,13 @@ const useStyles = makeStyles(() =>
       paddingTop: '20px',
       paddingBottom: '20px',
       paddingLeft: '20px',
-
-      textAlign: 'center',
+      paddingRight: '20px',
     },
     textStyle: {
       paddingTop: '10px',
-      paddingRight: '10px',
-      paddingLeft: '10px',
       paddingBottom: '10px',
+      paddingLeft: '10px',
+      paddingRight: '10px',
 
       font: '16px Roboto, sans-serif',
     },
