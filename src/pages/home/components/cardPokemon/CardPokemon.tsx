@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React, { Fragment, useEffect, useState } from 'react';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -8,47 +9,63 @@ import api from 'api/api';
 
 import useStyles from './CardPokemon.styles';
 
-import CharmanderIcon from '../assets/pokemonAsset/PokemonIcon';
+import PokemonIcon from '../assets/pokemonAsset/PokemonIcon';
+import { Link } from 'react-router-dom';
+import { createNamedExports } from 'typescript';
 
 interface Props {
-  id: number;
-  name: string;
-  weight: number;
-  sprites: {
-    front_default: string;
-  };
+  results: [
+    {
+      name: string;
+      url: string;
+    },
+  ];
 }
 
 const CardPokemon = () => {
-  // TODO... function is been called a lot of times for some reason... even if I call
-  // it just one time
   const { container, textStyle } = useStyles();
-  const [pokemons, setPokemons] = useState<Props[]>([]);
+  const [pokemons, setPokemons] = useState<Props>();
 
-  async function addPokemonInList(id: number): Promise<void> {
-    if (pokemons.length < 1) {
-      const response = await api.get<Props>(`/pokemon/${id}`);
-      setPokemons([...pokemons, response.data]);
-    }
+  async function addAllPokemonsInList(
+    quantityOfPokemons: number,
+  ): Promise<void> {
+    const response = await api.get<Props>(
+      `/pokemon/?limit=${quantityOfPokemons}&offset=0`,
+    );
+    setPokemons(response.data);
   }
 
-  //addPokemonInList(445);
+  useEffect(() => {
+    addAllPokemonsInList(100);
+  }, []);
 
-  pokemons.forEach(it => {
-    console.log(it.name);
-  });
+  console.log(pokemons);
+
+  function sendPokemonIdToHistory(id: number) {
+    // When user clicks on it, will send to another screen the id value. Path will need to change with id value.
+    <Link
+      to={{
+        pathname: `/details/${id}`,
+        state: `${id}`,
+      }}
+    ></Link>;
+  }
 
   return (
-    <>
-      {pokemons.forEach(it => {
-        <Grid container item xs={3} spacing={3} className={container}>
-          <Paper elevation={1} className={textStyle}>
-            <Typography>Peso: {it.weight}kg</Typography>
-            <CharmanderIcon src={it.sprites.front_default} />
-          </Paper>
-        </Grid>;
-      })}
-    </>
+    <Fragment>
+      {/* {pokemons.forEach(it => { */}
+      <Grid container item xs={3} spacing={3} className={container}>
+        <Paper
+          //onClick={() => sendPokemonIdToHistory(it.id)}
+          elevation={1}
+          className={textStyle}
+        >
+          <Typography>Peso: ? kg</Typography>
+          <PokemonIcon src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" />
+        </Paper>
+      </Grid>
+      {/* })} */}
+    </Fragment>
   );
 };
 

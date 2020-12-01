@@ -5,9 +5,9 @@ interface Props {
   src: string;
 }
 
-const CharmanderIcon = ({ src }: Props) => {
+const PokemonIcon = ({ src }: Props) => {
   const { container } = useStyles();
   return <img alt="charmander" src={src} className={container} />;
 };
 
-export default CharmanderIcon;
+export default PokemonIcon;
