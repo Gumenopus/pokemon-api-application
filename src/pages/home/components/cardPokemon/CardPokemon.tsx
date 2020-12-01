@@ -26,16 +26,13 @@ const CardPokemon = () => {
   const [pokemons, setPokemons] = useState<Props[]>([]);
 
   async function addPokemonInList(id: number): Promise<void> {
-    const response = await api.get<Props>(`/pokemon/${id}`);
-    // testing...
-    if (pokemons.length === 0) {
-      setPokemons([response.data]);
-    } else {
+    if (pokemons.length < 1) {
+      const response = await api.get<Props>(`/pokemon/${id}`);
       setPokemons([...pokemons, response.data]);
     }
   }
 
-  addPokemonInList(445);
+  //addPokemonInList(445);
 
   pokemons.forEach(it => {
     console.log(it.name);
