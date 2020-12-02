@@ -5,12 +5,14 @@ const useStyles = makeStyles(() =>
     container: {
       marginTop: '10px',
       marginBottom: '10px',
+      marginLeft: '10px',
+      marginRight: '10px',
 
       justifyContent: 'center',
       alignItems: 'center',
 
-      width: '100px',
-      height: '150px',
+      width: '130px',
+      height: '180px',
     },
   }),
 );

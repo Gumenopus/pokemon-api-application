@@ -25,7 +25,7 @@ interface Props {
 }
 
 const CardPokemon = () => {
-  const { container, textStyle } = useStyles();
+  const { container, textStyle, divContainer } = useStyles();
   const [pokemons, setPokemons] = useState<Props>();
 
   async function addAllPokemonsInList(): Promise<void> {
@@ -38,16 +38,18 @@ const CardPokemon = () => {
   }, []);
 
   return (
-    <Fragment>
-      {pokemons?.cards.map(card => (
-        <Grid className={container}>
-          <Paper elevation={1} className={textStyle}>
-            <Typography>Name: {card.name}</Typography>
-            <PokemonIcon src={card.imageUrl}></PokemonIcon>
-          </Paper>
-        </Grid>
-      ))}
-    </Fragment>
+    <div className={divContainer}>
+      <Fragment>
+        {pokemons?.cards.map(card => (
+          <Grid container spacing={2} item xs={4} className={container}>
+            <Paper elevation={1} className={textStyle}>
+              <Typography>Name: {card.name}</Typography>
+              <PokemonIcon src={card.imageUrl}></PokemonIcon>
+            </Paper>
+          </Grid>
+        ))}
+      </Fragment>
+    </div>
   );
 };
 
