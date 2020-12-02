@@ -39,7 +39,14 @@ const CardPokemon = () => {
     addAllPokemonsInList(100);
   }, []);
 
-  console.log(pokemons);
+  pokemons?.results.forEach(it => {
+    console.log('bleh: ' + `${it.name}`);
+  });
+
+  // for (let i = 0; i < 100; i++) {
+  //   console.log('Pokémon name: ' + pokemons?.results[i].name);
+  //   console.log('URL for more details: ' + pokemons?.results[i].url);
+  // }
 
   function sendPokemonIdToHistory(id: number) {
     // When user clicks on it, will send to another screen the id value. Path will need to change with id value.
@@ -53,7 +60,6 @@ const CardPokemon = () => {
 
   return (
     <Fragment>
-      {/* {pokemons.forEach(it => { */}
       <Grid container item xs={3} spacing={3} className={container}>
         <Paper
           //onClick={() => sendPokemonIdToHistory(it.id)}
@@ -64,7 +70,6 @@ const CardPokemon = () => {
           <PokemonIcon src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" />
         </Paper>
       </Grid>
-      {/* })} */}
     </Fragment>
   );
 };
