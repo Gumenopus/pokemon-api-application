@@ -11,7 +11,8 @@ import useStyles from './CardPokemon.styles';
 
 import PokemonIcon from '../assets/pokemonAsset/PokemonIcon';
 import { Link } from 'react-router-dom';
-import { createNamedExports } from 'typescript';
+import { createNamedExports, JSDocCallbackTag } from 'typescript';
+import Box from '@material-ui/core/Box';
 
 interface Props {
   results: [
@@ -39,15 +40,6 @@ const CardPokemon = () => {
     addAllPokemonsInList(100);
   }, []);
 
-  pokemons?.results.forEach(it => {
-    console.log('bleh: ' + `${it.name}`);
-  });
-
-  // for (let i = 0; i < 100; i++) {
-  //   console.log('Pokémon name: ' + pokemons?.results[i].name);
-  //   console.log('URL for more details: ' + pokemons?.results[i].url);
-  // }
-
   function sendPokemonIdToHistory(id: number) {
     // When user clicks on it, will send to another screen the id value. Path will need to change with id value.
     <Link
@@ -58,18 +50,16 @@ const CardPokemon = () => {
     ></Link>;
   }
 
+  const list = [];
+
+  list.push('aaa');
+  list.push('bbb');
+
   return (
     <Fragment>
-      <Grid container item xs={3} spacing={3} className={container}>
-        <Paper
-          //onClick={() => sendPokemonIdToHistory(it.id)}
-          elevation={1}
-          className={textStyle}
-        >
-          <Typography>Peso: ? kg</Typography>
-          <PokemonIcon src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" />
-        </Paper>
-      </Grid>
+      {pokemons?.results.map(pokemon => (
+        <h1>{pokemon.name}</h1>
+      ))}
     </Fragment>
   );
 };
