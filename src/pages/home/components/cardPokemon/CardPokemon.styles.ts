@@ -3,6 +3,8 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() =>
   createStyles({
     container: {
+      width: '200px',
+
       paddingTop: '20px',
       paddingBottom: '20px',
       paddingLeft: '20px',
@@ -15,6 +17,7 @@ const useStyles = makeStyles(() =>
       paddingRight: '10px',
 
       font: '16px Roboto, sans-serif',
+      textAlign: 'center',
     },
   }),
 );

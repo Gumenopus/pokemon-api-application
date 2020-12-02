@@ -13,6 +13,7 @@ import PokemonIcon from '../assets/pokemonAsset/PokemonIcon';
 import { Link } from 'react-router-dom';
 import { createNamedExports, JSDocCallbackTag } from 'typescript';
 import Box from '@material-ui/core/Box';
+import Pokemon from 'model/Pokemon';
 
 interface Props {
   results: [
@@ -37,7 +38,7 @@ const CardPokemon = () => {
   }
 
   useEffect(() => {
-    addAllPokemonsInList(100);
+    addAllPokemonsInList(500);
   }, []);
 
   function sendPokemonIdToHistory(id: number) {
@@ -58,7 +59,12 @@ const CardPokemon = () => {
   return (
     <Fragment>
       {pokemons?.results.map(pokemon => (
-        <h1>{pokemon.name}</h1>
+        <Grid className={container}>
+          <Paper elevation={1} className={textStyle}>
+            <Typography>Name: {pokemon.name}</Typography>
+            <PokemonIcon src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png"></PokemonIcon>
+          </Paper>
+        </Grid>
       ))}
     </Fragment>
   );

@@ -4,7 +4,7 @@ const useStyles = makeStyles(() =>
   createStyles({
     container: {
       marginTop: '10px',
-      marginBottom: '30px',
+      marginBottom: '10px',
 
       justifyContent: 'center',
       alignItems: 'center',
