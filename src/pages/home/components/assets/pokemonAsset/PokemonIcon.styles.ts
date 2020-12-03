@@ -11,8 +11,11 @@ const useStyles = makeStyles(() =>
       justifyContent: 'center',
       alignItems: 'center',
 
-      width: '130px',
-      height: '180px',
+      width: '150px',
+      height: '220px',
+
+      cursor: 'pointer',
+      Zoom: '1',
     },
   }),
 );
