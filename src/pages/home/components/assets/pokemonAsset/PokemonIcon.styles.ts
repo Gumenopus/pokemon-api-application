@@ -3,19 +3,17 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() =>
   createStyles({
     container: {
-      marginTop: '10px',
-      marginBottom: '10px',
-      marginLeft: '10px',
-      marginRight: '10px',
-
-      justifyContent: 'center',
-      alignItems: 'center',
-
-      width: '150px',
-      height: '220px',
-
       cursor: 'pointer',
-      Zoom: '1',
+
+      marginTop: '20px',
+      marginBottom: '20px',
+      marginLeft: '20px',
+      marginRight: '20px',
+
+      display: 'flex',
+
+      width: '220px',
+      height: '300px',
     },
   }),
 );

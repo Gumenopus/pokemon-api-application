@@ -33,24 +33,11 @@ const CardPokemon = () => {
 
   return (
     <div className={divContainer}>
-      <Fragment>
-        {pokemons?.cards.map(card => (
-          <Grid
-            key={card.imageUrl}
-            container
-            spacing={2}
-            item
-            xs={4}
-            className={container}
-          >
-            <PokemonIcon
-              src={card.imageUrl}
-              mouseEnterMessage="Hey, I'm in!"
-              mouseOutMessage="Hey, I'm out!"
-            ></PokemonIcon>
-          </Grid>
-        ))}
-      </Fragment>
+      {pokemons?.cards.map(card => (
+        <Grid key={card.imageUrl} className={container}>
+          <PokemonIcon src={card.imageUrl}></PokemonIcon>
+        </Grid>
+      ))}
     </div>
   );
 };

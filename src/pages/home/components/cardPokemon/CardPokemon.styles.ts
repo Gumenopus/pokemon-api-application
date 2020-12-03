@@ -10,7 +10,8 @@ const useStyles = makeStyles(() =>
     },
     divContainer: {
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'row', // just talking :p can be 'ltr' (left to right)
+      flexWrap: 'wrap', // that's the magic!!! :D
     },
   }),
 );
