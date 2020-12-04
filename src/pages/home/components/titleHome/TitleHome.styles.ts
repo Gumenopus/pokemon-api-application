@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
+  // Components
   textTitleContainer: {
     alignContent: 'center',
     font: '40px Fredoka One',
@@ -12,11 +13,20 @@ const useStyles = makeStyles({
     height: '100px',
   },
   textFieldContainer: {
+    marginBottom: '50px',
+
     marginLeft: '350px',
-    marginRight: '350px',
+    marginRight: '10px',
 
     width: '100%',
   },
+  buttonSearchContainer: {
+    marginTop: '10px',
+
+    width: '100%',
+    marginRight: '340px',
+  },
+  // Divs
   divContainerTitle: {
     marginBottom: '100px',
 

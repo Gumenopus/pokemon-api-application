@@ -3,13 +3,14 @@ import React, { Fragment, useEffect, useState } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import api from 'service/api';
 
 import useStylesCardPokemon from './CardPokemon.styles';
 import useStylesTitle from '../titleHome/TitleHome.styles';
 
-import { TITLE_HOME_IMAGE } from '../../constants/Constants';
+import TITLE_HOME_IMAGE from '../../constants/Constants';
 
 import PokemonIcon from '../assets/pokemonAsset/PokemonIcon';
 
@@ -28,6 +29,7 @@ const CardPokemon = () => {
     textTitleContainer,
     imageContainer,
     textFieldContainer,
+    buttonSearchContainer,
     divContainerTitle,
     divContainerTextField,
   } = useStylesTitle();
@@ -52,9 +54,20 @@ const CardPokemon = () => {
 
       <div className={divContainerTextField}>
         <TextField
+          variant={'outlined'}
           className={textFieldContainer}
           placeholder={'Search for a pokémon card'}
         ></TextField>
+
+        <div>
+          <Button
+            className={buttonSearchContainer}
+            variant={'contained'}
+            color={'primary'}
+          >
+            Search
+          </Button>
+        </div>
       </div>
 
       <div className={divContainer}>
