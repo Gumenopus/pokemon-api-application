@@ -2,6 +2,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
 import api from 'service/api';
 
@@ -26,7 +27,9 @@ const CardPokemon = () => {
   const {
     textTitleContainer,
     imageContainer,
+    textFieldContainer,
     divContainerTitle,
+    divContainerTextField,
   } = useStylesTitle();
 
   const [pokemons, setPokemons] = useState<Props>();
@@ -45,6 +48,13 @@ const CardPokemon = () => {
       <div className={divContainerTitle}>
         <h1 className={textTitleContainer}>Welcome to the Cards Manager!</h1>
         <img className={imageContainer} src={TITLE_HOME_IMAGE}></img>
+      </div>
+
+      <div className={divContainerTextField}>
+        <TextField
+          className={textFieldContainer}
+          placeholder={'Search for a pokémon card'}
+        ></TextField>
       </div>
 
       <div className={divContainer}>

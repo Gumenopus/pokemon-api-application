@@ -11,12 +11,22 @@ const useStyles = makeStyles({
     width: '200px',
     height: '100px',
   },
+  textFieldContainer: {
+    marginLeft: '350px',
+    marginRight: '350px',
+
+    width: '100%',
+  },
   divContainerTitle: {
     marginBottom: '100px',
 
     display: 'flex',
     flexDirection: 'row',
 
+    justifyContent: 'center',
+  },
+  divContainerTextField: {
+    display: 'flex',
     justifyContent: 'center',
   },
 });
