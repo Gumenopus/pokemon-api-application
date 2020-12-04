@@ -23,8 +23,10 @@ const useStyles = makeStyles({
   buttonSearchContainer: {
     marginTop: '10px',
 
-    width: '100%',
-    marginRight: '340px',
+    width: '50%',
+    height: '40px',
+
+    marginRight: '40px',
   },
   // Divs
   divContainerTitle: {

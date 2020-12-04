@@ -3,7 +3,10 @@ import React, { Fragment, useEffect, useState } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
+
+import DeleteIcon from '@material-ui/icons/DeleteOutline';
 
 import api from 'service/api';
 
@@ -59,15 +62,13 @@ const CardPokemon = () => {
           placeholder={'Search for a pokémon card'}
         ></TextField>
 
-        <div>
-          <Button
-            className={buttonSearchContainer}
-            variant={'contained'}
-            color={'primary'}
-          >
-            Search
-          </Button>
-        </div>
+        <Button
+          className={buttonSearchContainer}
+          variant={'contained'}
+          color={'primary'}
+        >
+          Search
+        </Button>
       </div>
 
       <div className={divContainer}>
