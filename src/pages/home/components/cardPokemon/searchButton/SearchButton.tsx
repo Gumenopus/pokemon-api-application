@@ -4,7 +4,6 @@ import useStyles from './SearchButton.styles';
 
 const SearchButton = () => {
   const { buttonSearchContainer } = useStyles();
-
   return (
     <Button
       className={buttonSearchContainer}

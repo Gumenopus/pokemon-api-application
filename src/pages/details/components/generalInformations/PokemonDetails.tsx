@@ -1,5 +1,4 @@
 /* eslint-disable */
-import Pokemon from 'model/Pokemon';
 import React from 'react';
 
 const PokemonDetails = () => {
