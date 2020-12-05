@@ -12,22 +12,6 @@ const useStyles = makeStyles({
     width: '200px',
     height: '100px',
   },
-  textFieldContainer: {
-    marginBottom: '50px',
-
-    marginLeft: '350px',
-    marginRight: '10px',
-
-    width: '100%',
-  },
-  buttonSearchContainer: {
-    marginTop: '10px',
-
-    width: '50%',
-    height: '40px',
-
-    marginRight: '40px',
-  },
   // Divs
   divContainerTitle: {
     marginBottom: '100px',
@@ -35,10 +19,6 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'row',
 
-    justifyContent: 'center',
-  },
-  divContainerTextField: {
-    display: 'flex',
     justifyContent: 'center',
   },
 });
