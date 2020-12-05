@@ -7,7 +7,11 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import useStyles from './SearchTextField.styles';
 
-const SearchTextField = () => {
+interface Props {
+  setPokemon: Function;
+}
+
+const SearchTextField = (props: Props) => {
   const { textFieldContainer } = useStyles();
 
   return (
@@ -15,6 +19,7 @@ const SearchTextField = () => {
       variant="outlined"
       className={textFieldContainer}
       placeholder="Search for a pokémon card"
+      onChange={it => props.setPokemon(it.target.value)}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
