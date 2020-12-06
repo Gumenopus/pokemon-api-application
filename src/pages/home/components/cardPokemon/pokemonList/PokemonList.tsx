@@ -18,7 +18,6 @@ const PokemonList = ({ cards }: Cards) => {
           <PokemonIcon src={card.imageUrl} />
         </Grid>
       ))}
-      ;
     </Fragment>
   );
 };
