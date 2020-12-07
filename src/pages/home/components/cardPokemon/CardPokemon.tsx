@@ -10,6 +10,7 @@ import PokemonList from './pokemonList/PokemonList';
 import SearchTextField from './searchTextField/SearchTextField';
 
 import Cards from '../types/Cards.types';
+import { AxiosResponse } from 'axios';
 
 const CardPokemon = () => {
   const { divContainerList, divContainerTextField } = useStylesCardPokemon();
@@ -26,9 +27,18 @@ const CardPokemon = () => {
     try {
       const response = await api.get<Cards>(`cards?name=${pokemon}`);
       setPokemons(response.data);
+
+      if (isInvalidPokemon(response)) {
+        // TODO: deal with it
+        console.log('Invalid pokémon name!');
+      }
     } catch (err) {
       console.log('An error occurred trying call the API');
     }
+  }
+
+  function isInvalidPokemon(response: AxiosResponse<Cards>): Boolean {
+    return !response.data.cards?.length;
   }
 
   useEffect(() => {

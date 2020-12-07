@@ -14,7 +14,6 @@ const useStyles = makeStyles(() =>
 
       width: '220px',
       height: '300px',
-
       /* TODO: implement hover, transform: translateX(5px) */
     },
   }),
