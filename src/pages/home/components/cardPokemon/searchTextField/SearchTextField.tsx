@@ -8,9 +8,14 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import useStyles from './SearchTextField.styles';
 
+import { ENTER_KEY } from '../../../constants/Constants';
+
 interface Props {
   setPokemon: Function;
   onEnterPressedEvent: Function;
+  hasError?: boolean;
+  helperText?: string;
+  labelText?: string;
 }
 
 const SearchTextField = (props: Props) => {
@@ -18,12 +23,15 @@ const SearchTextField = (props: Props) => {
 
   return (
     <TextField
+      error={props.hasError}
+      helperText={props.hasError && props.helperText ? props.helperText : ''}
+      label={props.hasError && props.labelText ? props.labelText : ''}
       variant="outlined"
       className={textFieldContainer}
       placeholder="Search for a pokémon card"
       onChange={it => props.setPokemon(it.target.value)}
-      onKeyPress={ev => {
-        if (ev.key === 'Enter') {
+      onKeyPress={it => {
+        if (it.key === 'Enter') {
           props.onEnterPressedEvent();
         }
       }}

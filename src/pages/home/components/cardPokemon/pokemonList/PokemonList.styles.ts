@@ -5,8 +5,8 @@ const useStyles = makeStyles(() =>
     gridContainer: {
       paddingTop: '20px',
       paddingBottom: '20px',
-      paddingLeft: '30px',
-      paddingRight: '20px',
+      paddingLeft: '20px',
+      paddingRight: '30px',
     },
     circularProgressAlign: {
       display: 'flex',
