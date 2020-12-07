@@ -1,6 +1,8 @@
+/* eslint-disable */
 import React, { Fragment } from 'react';
 
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Cards from '../../types/Cards.types';
 
@@ -8,16 +10,20 @@ import PokemonIcon from '../../assets/pokemonAsset/PokemonIcon';
 import useStyles from './PokemonList.styles';
 
 const PokemonList = ({ cards }: Cards) => {
-  const { gridContainer } = useStyles();
+  const { gridContainer, circularProgressAlign } = useStyles();
 
   return (
-    /* eslint-disable react/jsx-fragments */
     <Fragment>
-      {cards?.map(card => (
-        <Grid key={card.imageUrl} className={gridContainer}>
-          <PokemonIcon src={card.imageUrl} />
-        </Grid>
-      ))}
+      {cards ? (
+        cards?.map(card => (
+          <Grid key={card.imageUrl} className={gridContainer}>
+            <PokemonIcon src={card.imageUrl} />
+          </Grid>
+        ))
+      ) : (
+        // TODO: Centralize this
+        <CircularProgress />
+      )}
     </Fragment>
   );
 };

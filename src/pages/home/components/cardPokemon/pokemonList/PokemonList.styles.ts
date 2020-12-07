@@ -8,6 +8,10 @@ const useStyles = makeStyles(() =>
       paddingLeft: '30px',
       paddingRight: '20px',
     },
+    circularProgressAlign: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
   }),
 );
 

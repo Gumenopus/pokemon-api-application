@@ -5,8 +5,8 @@ const useStyles = makeStyles(() =>
     textFieldContainer: {
       marginBottom: '50px',
 
-      marginLeft: '350px',
-      marginRight: '10px',
+      marginLeft: '100px',
+      marginRight: '100px',
 
       width: '100%',
     },

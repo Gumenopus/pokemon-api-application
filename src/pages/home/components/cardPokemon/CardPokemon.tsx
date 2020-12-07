@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, Key, useEffect, useState } from 'react';
 
 import api from 'service/api';
 
@@ -10,7 +10,6 @@ import PokemonList from './pokemonList/PokemonList';
 import SearchTextField from './searchTextField/SearchTextField';
 
 import Cards from '../types/Cards.types';
-import SearchButton from './searchButton/SearchButton';
 
 const CardPokemon = () => {
   const { divContainerList, divContainerTextField } = useStylesCardPokemon();
@@ -41,9 +40,10 @@ const CardPokemon = () => {
       <WelcomeTitle />
 
       <div className={divContainerTextField}>
-        <SearchTextField setPokemon={setPokemon} />
-
-        <SearchButton onClick={() => searchForCard()} />
+        <SearchTextField
+          onEnterPressedEvent={searchForCard}
+          setPokemon={setPokemon}
+        />
       </div>
 
       <div className={divContainerList}>

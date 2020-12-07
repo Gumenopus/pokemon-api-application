@@ -10,6 +10,7 @@ import useStyles from './SearchTextField.styles';
 
 interface Props {
   setPokemon: Function;
+  onEnterPressedEvent: Function;
 }
 
 const SearchTextField = (props: Props) => {
@@ -21,6 +22,11 @@ const SearchTextField = (props: Props) => {
       className={textFieldContainer}
       placeholder="Search for a pokémon card"
       onChange={it => props.setPokemon(it.target.value)}
+      onKeyPress={ev => {
+        if (ev.key === 'Enter') {
+          props.onEnterPressedEvent();
+        }
+      }}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
