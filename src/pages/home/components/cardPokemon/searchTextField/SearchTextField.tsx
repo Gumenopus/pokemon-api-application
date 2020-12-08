@@ -31,7 +31,7 @@ const SearchTextField = (props: Props) => {
       placeholder="Search for a pokémon card"
       onChange={it => props.setPokemon(it.target.value)}
       onKeyPress={it => {
-        if (it.key === 'Enter') {
+        if (it.key === ENTER_KEY.toString()) {
           props.onEnterPressedEvent();
         }
       }}

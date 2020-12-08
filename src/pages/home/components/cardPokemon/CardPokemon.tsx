@@ -18,7 +18,9 @@ const CardPokemon = () => {
   const [pokemons, setPokemons] = useState<Cards>();
   const [pokemon, setPokemon] = useState('');
   // TODO...
-  let [isValidPokemonName, setIsValidPokemonName] = useState<boolean>(false);
+  let [isInvalidPokemonName, setIsInvalidPokemonName] = useState<boolean>(
+    false,
+  );
 
   async function addAllPokemonsInList(): Promise<void> {
     const response = await api.get<Cards>('/cards');
@@ -30,15 +32,17 @@ const CardPokemon = () => {
       const response = await api.get<Cards>(`cards?name=${pokemon}`);
       setPokemons(response.data);
 
-      if (isInvalidPokemon(response)) {
-        // TODO...
+      if (isInvalidSearchedPokemon(response)) {
+        setIsInvalidPokemonName(true);
+      } else {
+        setIsInvalidPokemonName(false);
       }
     } catch (err) {
       console.log('An error occurred trying call the API');
     }
   }
 
-  function isInvalidPokemon(response: AxiosResponse<Cards>): Boolean {
+  function isInvalidSearchedPokemon(response: AxiosResponse<Cards>): Boolean {
     return !response.data.cards?.length;
   }
 
@@ -55,9 +59,9 @@ const CardPokemon = () => {
           onEnterPressedEvent={() => searchForCard()}
           setPokemon={setPokemon}
           /* I wanted to put all this on a "errorProperties: {...}", but I failed :( */
-          hasError={false}
-          helperText="Error!"
-          labelText="Error!"
+          hasError={isInvalidPokemonName}
+          helperText="Invalid pokémon name. Try again!"
+          labelText="Error"
         />
       </div>
 
