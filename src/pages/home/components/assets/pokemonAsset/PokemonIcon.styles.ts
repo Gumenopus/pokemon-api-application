@@ -1,4 +1,5 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -18,5 +19,12 @@ const useStyles = makeStyles(() =>
     },
   }),
 );
+
+export const CardHover = styled.div`
+  &:hover {
+    transition: transform 0.1s;
+    transform: translateY(-10px);
+  }
+`;
 
 export default useStyles;

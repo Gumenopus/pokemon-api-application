@@ -9,6 +9,8 @@ import Cards from '../../types/Cards.types';
 import PokemonIcon from '../../assets/pokemonAsset/PokemonIcon';
 import useStyles from './PokemonList.styles';
 
+import { CardHover } from '../../assets/pokemonAsset/PokemonIcon.styles';
+
 const PokemonList = ({ cards }: Cards) => {
   const { gridContainer, circularProgressAlign } = useStyles();
 
@@ -17,7 +19,9 @@ const PokemonList = ({ cards }: Cards) => {
       {cards ? (
         cards?.map(card => (
           <Grid key={card.imageUrl} className={gridContainer}>
-            <PokemonIcon src={card.imageUrl} />
+            <CardHover>
+              <PokemonIcon src={card.imageUrl} />
+            </CardHover>
           </Grid>
         ))
       ) : (
