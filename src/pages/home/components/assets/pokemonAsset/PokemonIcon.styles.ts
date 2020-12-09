@@ -22,7 +22,7 @@ const useStyles = makeStyles(() =>
 
 export const CardHover = styled.div`
   &:hover {
-    transition: transform 0.1s;
+    transition: transform 0.3s;
     transform: translateY(-10px);
   }
 `;
