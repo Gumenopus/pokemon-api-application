@@ -25,6 +25,8 @@ export const CardHover = styled.div`
     transition: transform 0.3s;
     transform: translateY(-10px);
   }
+  transition: transform 0.3s;
+  transform: translateY(10px);
 `;
 
 export default useStyles;
