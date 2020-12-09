@@ -17,7 +17,6 @@ const CardPokemon = () => {
 
   const [pokemons, setPokemons] = useState<Cards>();
   const [pokemon, setPokemon] = useState('');
-  // TODO...
   let [isInvalidPokemonName, setIsInvalidPokemonName] = useState<boolean>(
     false,
   );
@@ -66,7 +65,10 @@ const CardPokemon = () => {
       </div>
 
       <div className={divContainerList}>
-        <PokemonList cards={pokemons?.cards} />
+        <PokemonList
+          cards={pokemons?.cards}
+          onClick={() => console.log('Clicked!')}
+        />
       </div>
     </Fragment>
   );

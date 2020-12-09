@@ -11,7 +11,17 @@ import useStyles from './PokemonList.styles';
 
 import { CardHover } from '../../assets/pokemonAsset/PokemonIcon.styles';
 
-const PokemonList = ({ cards }: Cards) => {
+interface Props {
+  onClick: Function;
+  cards?: [
+    {
+      name: string;
+      imageUrl: string;
+    },
+  ];
+}
+
+const PokemonList = ({ cards, onClick }: Props) => {
   const { gridContainer, circularProgressAlign } = useStyles();
 
   return (
@@ -20,7 +30,7 @@ const PokemonList = ({ cards }: Cards) => {
         cards?.map(card => (
           <Grid key={card.imageUrl} className={gridContainer}>
             <CardHover>
-              <PokemonIcon src={card.imageUrl} />
+              <PokemonIcon onClick={() => onClick()} src={card.imageUrl} />
             </CardHover>
           </Grid>
         ))
