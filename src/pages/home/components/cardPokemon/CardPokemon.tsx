@@ -10,13 +10,17 @@ import PokemonList from './pokemonList/PokemonList';
 import SearchTextField from './searchTextField/SearchTextField';
 
 import Cards from '../types/Cards.types';
-import SearchButton from './searchButton/SearchButton';
+import { AxiosResponse } from 'axios';
 
 const CardPokemon = () => {
   const { divContainerList, divContainerTextField } = useStylesCardPokemon();
 
   const [pokemons, setPokemons] = useState<Cards>();
   const [pokemon, setPokemon] = useState('');
+  // TODO...
+  let [isInvalidPokemonName, setIsInvalidPokemonName] = useState<boolean>(
+    false,
+  );
 
   async function addAllPokemonsInList(): Promise<void> {
     const response = await api.get<Cards>('/cards');
@@ -27,9 +31,19 @@ const CardPokemon = () => {
     try {
       const response = await api.get<Cards>(`cards?name=${pokemon}`);
       setPokemons(response.data);
+
+      if (isInvalidSearchedPokemon(response)) {
+        setIsInvalidPokemonName(true);
+      } else {
+        setIsInvalidPokemonName(false);
+      }
     } catch (err) {
       console.log('An error occurred trying call the API');
     }
+  }
+
+  function isInvalidSearchedPokemon(response: AxiosResponse<Cards>): Boolean {
+    return !response.data.cards?.length;
   }
 
   useEffect(() => {
@@ -41,9 +55,14 @@ const CardPokemon = () => {
       <WelcomeTitle />
 
       <div className={divContainerTextField}>
-        <SearchTextField setPokemon={setPokemon} />
-
-        <SearchButton onClick={() => searchForCard()} />
+        <SearchTextField
+          onEnterPressedEvent={() => searchForCard()}
+          setPokemon={setPokemon}
+          /* I wanted to put all this on a "errorProperties: {...}", but I failed :( */
+          hasError={isInvalidPokemonName}
+          helperText="Invalid pokémon name. Try again!"
+          labelText="Error"
+        />
       </div>
 
       <div className={divContainerList}>
