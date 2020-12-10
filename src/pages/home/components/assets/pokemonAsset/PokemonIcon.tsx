@@ -8,14 +8,16 @@ interface Props {
 }
 
 const PokemonIcon = ({ src, onClick }: Props) => {
-  const { container } = useStyles();
+  const { container, image } = useStyles();
   return (
-    <img
-      onClick={() => onClick()}
-      alt="pokemon"
-      src={src}
-      className={container}
-    />
+    <div className={container}>
+      <img
+        onClick={() => onClick()}
+        alt="pokemon"
+        src={src}
+        className={image}
+      />
+    </div>
   );
 };
 

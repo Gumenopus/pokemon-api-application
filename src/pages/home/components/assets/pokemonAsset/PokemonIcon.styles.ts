@@ -15,17 +15,19 @@ const useStyles = makeStyles(() =>
 
       width: '220px',
       height: '300px',
-      /* TODO: implement hover, transform: translateX(5px) */
+    },
+    image: {
+      width: '100%',
     },
   }),
 );
 
 export const CardHover = styled.div`
   &:hover {
-    transition: transform 0.3s;
+    transition: transform 0.2s;
     transform: translateY(-10px);
   }
-  transition: transform 0.3s;
+  transition: transform 0.2s;
   transform: translateY(10px);
 `;
 

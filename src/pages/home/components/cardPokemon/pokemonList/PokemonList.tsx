@@ -35,8 +35,9 @@ const PokemonList = ({ cards, onClick }: Props) => {
           </Grid>
         ))
       ) : (
-        // TODO: Centralize this
-        <CircularProgress />
+        <div className={circularProgressAlign}>
+          <CircularProgress />
+        </div>
       )}
     </Fragment>
   );
