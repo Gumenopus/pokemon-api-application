@@ -22,17 +22,15 @@ interface Props {
 }
 
 const PokemonList = ({ cards, onClick }: Props) => {
-  const { gridContainer, circularProgressAlign } = useStyles();
+  const { circularProgressAlign } = useStyles();
 
   return (
     <Fragment>
       {cards ? (
         cards?.map(card => (
-          <Grid key={card.imageUrl} className={gridContainer}>
-            <CardHover>
-              <PokemonIcon onClick={() => onClick()} src={card.imageUrl} />
-            </CardHover>
-          </Grid>
+          <CardHover>
+            <PokemonIcon onClick={() => onClick()} src={card.imageUrl} />
+          </CardHover>
         ))
       ) : (
         <div className={circularProgressAlign}>

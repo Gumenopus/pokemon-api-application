@@ -4,17 +4,16 @@ import styled from 'styled-components';
 const useStyles = makeStyles(() =>
   createStyles({
     container: {
-      cursor: 'pointer',
-
-      marginTop: '20px',
-      marginBottom: '20px',
-      marginLeft: '20px',
-      marginRight: '20px',
-
-      display: 'flex',
-
       width: '220px',
       height: '300px',
+
+      cursor: 'pointer',
+      display: 'flex',
+
+      marginTop: '30px',
+      marginBottom: '30px',
+      marginLeft: '15px',
+      marginRight: '15px',
     },
     image: {
       width: '100%',

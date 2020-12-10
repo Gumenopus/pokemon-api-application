@@ -1,6 +1,6 @@
 ## Pokémon API
 
-Just an application using [Pokémon API](https://pokeapi.co/). Not big deal.
+Just an application using [Pokémon API](https://pokemontcg.io/). Not big deal.
 
 ## If you want to run the application
 
