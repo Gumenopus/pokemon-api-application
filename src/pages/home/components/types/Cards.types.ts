@@ -1,10 +1,9 @@
 /* A list of random cards, an array declared */
-interface Cards {
-  cards?: [
-    {
-      name: string;
-      imageUrl: string;
-    },
-  ];
+interface Pokemon {
+  name: string;
+  imageUrl: string;
 }
-export default Cards;
+
+export interface Cards {
+  cards?: Array<Pokemon>;
+}

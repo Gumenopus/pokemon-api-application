@@ -1,5 +1,8 @@
-**/*.js
-node_modules
-build
-/src/react-app-env.d.ts
-/src/reportWebVitals.ts
+/*.js
+/public
+/config
+/scripts
+/node_modules
+/build
+/dist
+/.vscode

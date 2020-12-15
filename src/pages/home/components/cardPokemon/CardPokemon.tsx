@@ -9,7 +9,7 @@ import WelcomeTitle from './welcomeTitle/WelcomeTitle';
 import PokemonList from './pokemonList/PokemonList';
 import SearchTextField from './searchTextField/SearchTextField';
 
-import Cards from '../types/Cards.types';
+import { Cards } from '../types/Cards.types';
 import { AxiosResponse } from 'axios';
 
 const CardPokemon = () => {
@@ -65,10 +65,7 @@ const CardPokemon = () => {
       </div>
 
       <div className={divContainerList}>
-        <PokemonList
-          cards={pokemons?.cards}
-          onClick={() => console.log('Clicked!')}
-        />
+        <PokemonList cards={pokemons?.cards} />
       </div>
     </Fragment>
   );

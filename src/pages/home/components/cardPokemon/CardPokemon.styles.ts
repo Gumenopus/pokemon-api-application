@@ -4,7 +4,6 @@ const useStyles = makeStyles(() =>
   createStyles({
     divContainerList: {
       width: '100%',
-
       display: 'flex',
 
       flexDirection: 'row',

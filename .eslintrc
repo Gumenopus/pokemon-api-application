@@ -1,19 +1,20 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "prettier"
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "prettier"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "react/jsx-filename-extension": [
       0
     ],
     "import/extensions": "off",
-    "prettier/prettier": [
-      "error"
-    ],
     "no-use-before-define": 0,
     "import/no-unresolved": 0,
     "no-restricted-syntax": 0,
