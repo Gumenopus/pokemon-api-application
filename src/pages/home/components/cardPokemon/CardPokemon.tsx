@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, Props, useEffect, useState } from 'react';
 
 import api from 'service/api';
 
@@ -17,9 +17,10 @@ const CardPokemon = () => {
 
   const [pokemons, setPokemons] = useState<Cards>();
   const [pokemon, setPokemon] = useState('');
-  let [isInvalidPokemonName, setIsInvalidPokemonName] = useState<boolean>(
+  const [isInvalidPokemonName, setIsInvalidPokemonName] = useState<boolean>(
     false,
   );
+  let pokemonPosition = 0;
 
   async function addAllPokemonsInList(): Promise<void> {
     const response = await api.get<Cards>('/cards');
@@ -65,7 +66,7 @@ const CardPokemon = () => {
       </div>
 
       <div className={divContainerList}>
-        <PokemonList cards={pokemons?.cards} />
+        <PokemonList cards={pokemons?.cards} index={pokemonPosition} />
       </div>
     </Fragment>
   );

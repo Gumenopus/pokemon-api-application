@@ -8,11 +8,12 @@ import useStyles from './PokemonList.styles';
 
 import { Cards } from '../../types/Cards.types';
 
-const PokemonList = ({ cards }: Cards) => {
+const PokemonList = ({ cards, index }: Cards) => {
   const { circularProgressAlign } = useStyles();
 
   const onHandler = (position: number) => {
-    return console.log('onHandler position: ', position);
+    index = position;
+    console.log('Position ', index);
   };
 
   return (
@@ -21,7 +22,7 @@ const PokemonList = ({ cards }: Cards) => {
         cards?.map((card, index) => (
           <PokemonIcon
             key={index}
-            onClick={onHandler(index)}
+            onClick={() => onHandler(index)}
             src={card.imageUrl}
           />
         ))

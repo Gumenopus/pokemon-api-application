@@ -1,8 +1,15 @@
-/* eslint-disable */
 import React from 'react';
 
+import useStyles from './PokemonDetails.styles';
+
 const PokemonDetails = () => {
-  return <h1>Hello</h1>;
+  const { divTitle } = useStyles();
+
+  return (
+    <div className={divTitle}>
+      <h1>Hello, World!</h1>
+    </div>
+  );
 };
 
 export default PokemonDetails;

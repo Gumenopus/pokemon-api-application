@@ -5,5 +5,10 @@ interface Pokemon {
 }
 
 export interface Cards {
+  index: number;
   cards?: Array<Pokemon>;
+}
+
+export interface Position {
+  index: number;
 }
