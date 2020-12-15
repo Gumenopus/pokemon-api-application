@@ -1,5 +1,6 @@
 /* A list of random cards, an array declared */
 interface Pokemon {
+  id: string;
   name: string;
   imageUrl: string;
 }

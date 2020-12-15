@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -20,11 +21,13 @@ const PokemonList = ({ cards, index }: Cards) => {
     <Fragment>
       {cards ? (
         cards?.map((card, index) => (
-          <PokemonIcon
-            key={index}
-            onClick={() => onHandler(index)}
-            src={card.imageUrl}
-          />
+          <Link key={card.id} to={`/details/${card.id}`}>
+            <PokemonIcon
+              key={index}
+              onClick={() => onHandler(index)}
+              src={card.imageUrl}
+            />
+          </Link>
         ))
       ) : (
         <div className={circularProgressAlign}>
