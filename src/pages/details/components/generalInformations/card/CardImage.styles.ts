@@ -2,9 +2,10 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() =>
   createStyles({
-    container: {
-      display: 'flex',
-      flexDirection: 'row',
+    alignProps: {
+      marginTop: '50px',
+      marginLeft: '50px',
+      width: '350px',
     },
   }),
 );

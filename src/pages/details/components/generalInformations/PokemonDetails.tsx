@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable */
+import React, { Fragment, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
 import api from '../../../../service/api';
 
 import useStyles from './PokemonDetails.styles';
 import { SpecificPokemon } from '../../../../types/Cards.types';
+import CardImage from './card/CardImage';
+import PokemonName from './pokemonName/PokemonName';
 
 interface URLRouteMatchProp {
   id: string;
@@ -12,7 +15,7 @@ interface URLRouteMatchProp {
 
 const PokemonDetails = () => {
   const { params } = useRouteMatch<URLRouteMatchProp>();
-  const { divTitle } = useStyles();
+  const { container } = useStyles();
 
   const [pokemon, setPokemon] = useState<SpecificPokemon>();
 
@@ -31,9 +34,12 @@ const PokemonDetails = () => {
   }, []);
 
   return (
-    <div className={divTitle}>
-      <img alt="pokemon" src={pokemon?.card.imageUrl} />
-    </div>
+    <Fragment>
+      <div className={container}>
+        <CardImage src={pokemon?.card.imageUrl}></CardImage>
+        <PokemonName></PokemonName>
+      </div>
+    </Fragment>
   );
 };
 
