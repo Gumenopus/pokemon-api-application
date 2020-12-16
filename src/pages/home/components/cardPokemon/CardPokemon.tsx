@@ -9,7 +9,7 @@ import WelcomeTitle from './welcomeTitle/WelcomeTitle';
 import PokemonList from './pokemonList/PokemonList';
 import SearchTextField from './searchTextField/SearchTextField';
 
-import { Cards } from '../types/Cards.types';
+import { Cards } from '../../../../types/Cards.types';
 import { AxiosResponse } from 'axios';
 
 const CardPokemon = () => {
