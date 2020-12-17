@@ -14,8 +14,8 @@ const PokemonAttack = ({ pokemon }: Pokemon) => {
   return (
     <React.Fragment>
       <div className={container}>
-        {pokemon?.card.attacks.map((attack, index) => (
-          <h1 className={pokemonAttack}>{pokemon.card.attacks[index].name}</h1>
+        {pokemon?.card.attacks.map(attack => (
+          <h1 className={pokemonAttack}>{attack.name}</h1>
         ))}
       </div>
     </React.Fragment>
