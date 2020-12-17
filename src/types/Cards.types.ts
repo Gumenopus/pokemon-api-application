@@ -32,7 +32,7 @@ export interface PokemonDetails {
 }
 
 // Specific object attack;
-interface Attacks {
+export interface Attacks {
   // TODO: cost
   name: string;
   text: string;

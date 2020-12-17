@@ -6,9 +6,10 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-evenly',
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
-      // I would can use justifyContent: space-evenly?
+    },
+    containerSupertype: {
+      display: 'flex',
+      flexDirection: 'row',
     },
     pokemonName: {
       font: '25px Roboto, sans-serif',
