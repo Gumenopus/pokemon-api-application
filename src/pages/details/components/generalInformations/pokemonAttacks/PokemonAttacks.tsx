@@ -24,8 +24,8 @@ const PokemonAttack = ({ attacks }: SpecificAttack) => {
           <React.Fragment>
             <div className={containerPokemonAttack}>
               {/* TODO: put a key in each chield, if condition for set energy type. */}
-              {attacks.cost.map(() => (
-                <EnergyIcon src="https://cdn.bulbagarden.net/upload/thumb/1/1d/Colorless-attack.png/20px-Colorless-attack.png" />
+              {attacks.cost.map(energy => (
+                <EnergyIcon energyColor={energy} />
               ))}
               <h1 key={index} className={pokemonAttackName}>
                 {attacks.name}
