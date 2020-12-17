@@ -5,27 +5,30 @@ const useStyles = makeStyles((theme: Theme) =>
     containerFirstInformations: {
       display: 'flex',
       flexDirection: 'row',
+      justifyContent: 'space-evenly',
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
+      // I would can use justifyContent: space-evenly?
     },
     pokemonName: {
-      font: '30px Roboto, sans-serif',
+      font: '25px Roboto, sans-serif',
       color: '#303030',
+      marginRight: theme.spacing(8),
     },
     pokemonSupertype: {
-      marginLeft: '50px',
-      font: '30px Roboto, sans-serif',
+      font: '25px Roboto, sans-serif',
       color: '#818181',
+      marginRight: theme.spacing(0.5),
     },
     pokemonSubtype: {
-      marginLeft: '10px',
-      font: '30px Roboto, sans-serif',
+      font: '25px Roboto, sans-serif',
       color: '#818181',
+      marginLeft: theme.spacing(0.5),
     },
     pokemonHP: {
-      marginLeft: '100px',
-      font: '30px Roboto, sans-serif',
+      font: '25px Roboto, sans-serif',
       color: '#303030',
+      marginLeft: theme.spacing(8),
     },
   }),
 );

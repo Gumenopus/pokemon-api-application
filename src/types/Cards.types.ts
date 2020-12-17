@@ -1,8 +1,19 @@
-//All cards in a list;
+// A list of objects;
+export interface Cards {
+  index: number;
+  cards?: Array<Pokemon>;
+}
+
+// All cards in a list;
 export interface Pokemon {
   id: string;
   name: string;
   imageUrl: string;
+}
+
+// Specific object, used when call by id;
+export interface SpecificPokemon {
+  card: PokemonDetails;
 }
 
 /* 
@@ -17,14 +28,15 @@ export interface PokemonDetails {
   supertype: string;
   subtype: string;
   hp: string;
+  attacks: Array<Attacks>;
 }
 
-//Specific object, used when call by id;
-export interface SpecificPokemon {
-  card: PokemonDetails;
-}
-// A list of objects;
-export interface Cards {
-  index: number;
-  cards?: Array<Pokemon>;
+// Specific object attack;
+interface Attacks {
+  // TODO: cost
+  name: string;
+  text: string;
+  damage: string;
+  cost: Array<String>;
+  convertedEnergyCost: number;
 }

@@ -5,10 +5,7 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       paddingLeft: theme.spacing(2),
     },
-    pokemonFirstAttack: {
-      font: '20px Roboto, sans-serif',
-    },
-    pokemonSecondAttack: {
+    pokemonAttack: {
       font: '20px Roboto, sans-serif',
     },
   }),

@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { SpecificPokemon } from 'types/Cards.types';
+
 import useStyles from './PokemonMainInformations.styles';
 
 interface Pokemon {

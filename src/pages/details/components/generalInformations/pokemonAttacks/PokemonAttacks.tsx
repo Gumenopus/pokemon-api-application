@@ -1,15 +1,22 @@
 /* eslint-disable */
 import React from 'react';
 
+import { SpecificPokemon } from 'types/Cards.types';
+
 import useStyles from './PokemonAttacks.styles';
 
-const PokemonAttack = () => {
-  const { container, pokemonFirstAttack, pokemonSecondAttack } = useStyles();
+interface Pokemon {
+  pokemon?: SpecificPokemon;
+}
+
+const PokemonAttack = ({ pokemon }: Pokemon) => {
+  const { container, pokemonAttack } = useStyles();
   return (
     <React.Fragment>
       <div className={container}>
-        <h1 className={pokemonFirstAttack}>a</h1>
-        <h1 className={pokemonSecondAttack}>b</h1>
+        {pokemon?.card.attacks.map((attack, index) => (
+          <h1 className={pokemonAttack}>{pokemon.card.attacks[index].name}</h1>
+        ))}
       </div>
     </React.Fragment>
   );
