@@ -6,9 +6,6 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: theme.spacing(2),
       paddingBottom: theme.spacing(2),
     },
-    containerDivSpace: {
-      marginBottom: theme.spacing(3),
-    },
     containerPokemonAttack: {
       display: 'flex',
       flexDirection: 'row',

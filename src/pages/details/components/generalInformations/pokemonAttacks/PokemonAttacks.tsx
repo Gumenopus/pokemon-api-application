@@ -13,7 +13,6 @@ interface SpecificAttack {
 const PokemonAttack = ({ attacks }: SpecificAttack) => {
   const {
     container,
-    containerDivSpace,
     pokemonAttackName,
     containerPokemonAttack,
     pokemonAttackText,
@@ -21,17 +20,23 @@ const PokemonAttack = ({ attacks }: SpecificAttack) => {
   return (
     <React.Fragment>
       <div className={container}>
-        {attacks?.map(attacks => (
+        {attacks?.map((attacks, index) => (
           <React.Fragment>
             <div className={containerPokemonAttack}>
-              {/* TODO: .map for <EnergyIcon/> */}
-              <EnergyIcon src="https://cdn.bulbagarden.net/upload/thumb/1/1d/Colorless-attack.png/20px-Colorless-attack.png" />
-              <h1 className={pokemonAttackName}>{attacks.name}</h1>
+              {/* TODO: put a key in each chield, if condition for set energy type. */}
+              {attacks.cost.map(() => (
+                <EnergyIcon src="https://cdn.bulbagarden.net/upload/thumb/1/1d/Colorless-attack.png/20px-Colorless-attack.png" />
+              ))}
+              <h1 key={index} className={pokemonAttackName}>
+                {attacks.name}
+              </h1>
             </div>
             {attacks.text ? (
-              <h1 className={pokemonAttackText}>{attacks.text}</h1>
+              <h1 key={index} className={pokemonAttackText}>
+                {attacks.text}
+              </h1>
             ) : (
-              <div className={containerDivSpace}></div>
+              <div></div>
             )}
           </React.Fragment>
         ))}
