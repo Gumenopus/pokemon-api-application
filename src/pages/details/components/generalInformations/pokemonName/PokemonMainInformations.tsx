@@ -24,7 +24,7 @@ const PokemonName = ({ pokemon }: Pokemon) => {
         <h1 className={pokemonName}>{pokemon?.card.name}</h1>
         <div className={containerSupertype}>
           <h1 className={pokemonSupertype}>{pokemon?.card.supertype} - </h1>
-          <h1 className={pokemonSubtype}>{pokemon?.card.subtype}</h1>
+          <h1 className={pokemonSubtype}> {pokemon?.card.subtype}</h1>
         </div>
         {/* TODO: image tag to pokémon type */}
         <h1 className={pokemonHP}>HP {pokemon?.card.hp}</h1>

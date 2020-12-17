@@ -6,6 +6,8 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-evenly',
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
     },
     containerSupertype: {
       display: 'flex',

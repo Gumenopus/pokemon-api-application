@@ -9,6 +9,11 @@ const useStyles = makeStyles((theme: Theme) =>
     containerDivSpace: {
       marginBottom: theme.spacing(3),
     },
+    containerPokemonAttack: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
     pokemonAttackName: {
       font: '20px Roboto, sans-serif',
     },
