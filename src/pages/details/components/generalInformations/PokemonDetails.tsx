@@ -2,12 +2,15 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
+import Card from '@material-ui/core/Card';
+
 import api from '../../../../service/api';
 
 import useStyles from './PokemonDetails.styles';
 import { SpecificPokemon } from '../../../../types/Cards.types';
 import CardImage from './card/CardImage';
-import PokemonName from './pokemonName/PokemonName';
+import PokemonMainInformations from './pokemonName/PokemonMainInformations';
+import PokemonAttacks from './pokemonAttacks/PokemonAttacks';
 
 interface URLRouteMatchProp {
   id: string;
@@ -15,7 +18,7 @@ interface URLRouteMatchProp {
 
 const PokemonDetails = () => {
   const { params } = useRouteMatch<URLRouteMatchProp>();
-  const { container } = useStyles();
+  const { container, containerPokemonInformations } = useStyles();
 
   const [pokemon, setPokemon] = useState<SpecificPokemon>();
 
@@ -36,8 +39,16 @@ const PokemonDetails = () => {
   return (
     <Fragment>
       <div className={container}>
-        <CardImage src={pokemon?.card.imageUrl}></CardImage>
-        <PokemonName></PokemonName>
+        <CardImage src={pokemon?.card.imageUrlHiRes}></CardImage>
+        <div className={containerPokemonInformations}>
+          <Card>
+            <PokemonMainInformations
+              pokemon={pokemon}
+            ></PokemonMainInformations>
+            {/* TODO: put a <Divider/> here */}
+            <PokemonAttacks />
+          </Card>
+        </div>
       </div>
     </Fragment>
   );
