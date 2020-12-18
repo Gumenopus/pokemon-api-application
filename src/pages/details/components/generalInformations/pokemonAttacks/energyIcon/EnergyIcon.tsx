@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import useStyle from './EnergyIcon.styles';
 

@@ -27,8 +27,14 @@ export interface PokemonDetails {
   imageUrlHiRes: string;
   supertype: string;
   subtype: string;
+  ability: Abilities;
   hp: string;
   attacks: Array<Attacks>;
+}
+
+export interface Abilities {
+  name: string;
+  text: string;
 }
 
 // Specific object attack;

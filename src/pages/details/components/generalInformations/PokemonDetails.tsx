@@ -46,7 +46,10 @@ const PokemonDetails = () => {
               pokemon={pokemon}
             ></PokemonMainInformations>
             {/* TODO: put a <Divider/> here */}
-            <PokemonAttacks attacks={pokemon?.card.attacks} />
+            <PokemonAttacks
+              attacks={pokemon?.card.attacks}
+              ability={pokemon?.card.ability}
+            />
           </Card>
         </div>
       </div>

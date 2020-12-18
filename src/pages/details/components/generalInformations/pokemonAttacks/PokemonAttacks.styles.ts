@@ -11,10 +11,23 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'row',
       alignItems: 'center',
     },
+    containerPokemonAbility: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
     pokemonAttackName: {
       font: '20px Roboto, sans-serif',
     },
     pokemonAttackText: {
+      font: '15px Roboto, sans-serif',
+      color: '#8C8C8C',
+      paddingRight: theme.spacing(2),
+    },
+    pokemonAbilityName: {
+      font: '20px Roboto, sans-serif',
+    },
+    pokemonAbilityText: {
       font: '15px Roboto, sans-serif',
       color: '#8C8C8C',
       paddingRight: theme.spacing(2),
