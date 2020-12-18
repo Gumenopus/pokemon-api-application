@@ -25,6 +25,7 @@ export interface PokemonDetails {
   id: string;
   name: string;
   imageUrlHiRes: string;
+  types: Array<String>;
   supertype: string;
   subtype: string;
   ability: Abilities;
@@ -35,6 +36,7 @@ export interface PokemonDetails {
 export interface Abilities {
   name: string;
   text: string;
+  type?: string;
 }
 
 // Specific object attack;

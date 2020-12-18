@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { SpecificPokemon } from 'types/Cards.types';
+import EnergyIcon from '../pokemonAttacks/energyIcon/EnergyIcon';
 
 import useStyles from './PokemonMainInformations.styles';
 
@@ -13,6 +14,7 @@ const PokemonName = ({ pokemon }: Pokemon) => {
   const {
     containerFirstInformations,
     containerSupertype,
+    containerHP,
     pokemonName,
     pokemonSupertype,
     pokemonSubtype,
@@ -26,8 +28,10 @@ const PokemonName = ({ pokemon }: Pokemon) => {
           <h1 className={pokemonSupertype}>{pokemon?.card.supertype} - </h1>
           <h1 className={pokemonSubtype}> {pokemon?.card.subtype}</h1>
         </div>
-        {/* TODO: image tag to pokémon type */}
-        <h1 className={pokemonHP}>HP {pokemon?.card.hp}</h1>
+        <div className={containerHP}>
+          <h1 className={pokemonHP}>HP {pokemon?.card.hp}</h1>
+          <EnergyIcon energyColor={pokemon?.card.types[0]} />
+        </div>
       </div>
     </React.Fragment>
   );

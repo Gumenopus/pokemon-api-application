@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme: Theme) =>
     pokemonAttackName: {
       font: '20px Roboto, sans-serif',
     },
+    pokemonAttackDamage: {
+      font: '20px Roboto, sans-serif',
+      fontWeight: 'bolder',
+      marginLeft: theme.spacing(4),
+    },
     pokemonAttackText: {
       font: '15px Roboto, sans-serif',
       color: '#8C8C8C',

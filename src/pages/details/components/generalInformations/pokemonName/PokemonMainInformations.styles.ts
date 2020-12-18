@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme: Theme) =>
     containerFirstInformations: {
       display: 'flex',
       flexDirection: 'row',
+      alignItems: 'center',
       justifyContent: 'space-evenly',
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
@@ -12,6 +13,12 @@ const useStyles = makeStyles((theme: Theme) =>
     containerSupertype: {
       display: 'flex',
       flexDirection: 'row',
+    },
+    containerHP: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
     },
     pokemonName: {
       font: '25px Roboto, sans-serif',
@@ -32,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       font: '25px Roboto, sans-serif',
       color: '#303030',
       marginLeft: theme.spacing(8),
+      marginRight: theme.spacing(2),
     },
   }),
 );
