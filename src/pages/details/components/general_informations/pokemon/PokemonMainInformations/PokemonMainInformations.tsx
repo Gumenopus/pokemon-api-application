@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { SpecificPokemon } from 'types/Cards.types';
-import EnergyIcon from '../pokemonAttacks/energyIcon/EnergyIcon';
+import EnergyIcon from '../pokemon_attacks/EnergyIcon/EnergyIcon';
 
 import useStyles from './PokemonMainInformations.styles';
 import { DEFAULT_INDEX_VALUE } from '../../../../constants/Constants';

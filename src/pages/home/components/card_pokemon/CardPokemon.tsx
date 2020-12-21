@@ -5,9 +5,9 @@ import api from 'service/api';
 
 import useStylesCardPokemon from './CardPokemon.styles';
 
-import WelcomeTitle from './welcomeTitle/WelcomeTitle';
-import PokemonList from './pokemonList/PokemonList';
-import SearchTextField from './searchTextField/SearchTextField';
+import WelcomeTitle from './WelcomeTitle/WelcomeTitle';
+import PokemonList from './PokemonList/PokemonList';
+import SearchTextField from './SearchTextField/SearchTextField';
 
 import { Cards } from '../../../../types/Cards.types';
 import { AxiosResponse } from 'axios';
@@ -52,19 +52,19 @@ const CardPokemon = () => {
 
   return (
     <Fragment>
-      <WelcomeTitle />
-
+      <WelcomeTitle
+        title="Pokémon TCG Community"
+        text="JOIN THE COMMUNITY OF PLAYERS WITH THE POKÉMON TCG"
+      />
       <div className={divContainerTextField}>
         <SearchTextField
           onEnterPressedEvent={() => searchForCard()}
           setPokemon={setPokemon}
-          /* I wanted to put all this on a "errorProperties: {...}", but I failed :( */
           hasError={isInvalidPokemonName}
           helperText="Invalid pokémon name. Try again!"
           labelText="Error"
         />
       </div>
-
       <div className={divContainerList}>
         <PokemonList cards={pokemons?.cards} index={pokemonPosition} />
       </div>

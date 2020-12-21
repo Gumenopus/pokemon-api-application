@@ -22,8 +22,8 @@ const TrainerMainInformations = ({ card }: TrainerProps) => {
       <div className={containerFirstInformations}>
         <h1 className={trainerName}>{card?.card.name}</h1>
         <div className={containerSupertype}>
-          <h1 className={trainerSupertype}>{card?.card.supertype} - </h1>
-          <h1 className={trainerSubtype}> {card?.card.subtype}</h1>
+          <h1 className={trainerSupertype}>{card?.card.supertype}</h1>
+          <h1 className={trainerSubtype}> - {card?.card.subtype}</h1>
         </div>
       </div>
     </React.Fragment>

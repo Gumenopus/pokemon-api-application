@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardPokemon from './components/cardPokemon/CardPokemon';
+import CardPokemon from './components/card_pokemon/CardPokemon';
 
 const Layout = () => {
   return <CardPokemon />;

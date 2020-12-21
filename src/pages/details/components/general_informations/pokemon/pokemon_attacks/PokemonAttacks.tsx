@@ -2,8 +2,8 @@
 import React from 'react';
 
 import { Abilities, Attacks } from '../../../../../../types/Cards.types';
-import AbilityIcon from './abilityIcon/AbilityIcon';
-import EnergyIcon from './energyIcon/EnergyIcon';
+import AbilityIcon from './AbilityIcon/AbilityIcon';
+import EnergyIcon from './EnergyIcon/EnergyIcon';
 
 import useStyles from './PokemonAttacks.styles';
 
@@ -25,7 +25,6 @@ const PokemonAttack = ({ attacks, ability }: SpecificAttack) => {
   } = useStyles();
   return (
     <div className={container}>
-      {/* TODO: abstract ability and attacks tags? */}
       {/* Ability */}
       {ability ? (
         <React.Fragment>
@@ -42,7 +41,6 @@ const PokemonAttack = ({ attacks, ability }: SpecificAttack) => {
       {attacks?.map((attacks, index) => (
         <React.Fragment>
           <div className={containerPokemonAttack}>
-            {/* TODO: put a key in each chield, if condition for set energy type. */}
             {attacks.cost.map(energy => (
               <EnergyIcon energyColor={energy} />
             ))}

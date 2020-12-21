@@ -9,13 +9,14 @@ import api from '../../../../service/api';
 import { SpecificPokemon } from '../../../../types/Cards.types';
 
 import useStyles from './PokemonDetails.styles';
-import CardImage from './pokemon/card/CardImage';
-import PokemonMainInformations from './pokemon/pokemonName/PokemonMainInformations';
-import PokemonAttacks from './pokemon/pokemonAttacks/PokemonAttacks';
+import CardImage from './pokemon/CardImage/CardImage';
+import PokemonMainInformations from './pokemon/PokemonMainInformations/PokemonMainInformations';
+import PokemonAttacks from './pokemon/pokemon_attacks/PokemonAttacks';
 import BottomInformations from './pokemon/BottomInformations/BottomInformations';
 
 import TrainerMainInformations from './trainer/TrainerMainInformations/TrainerMainInformations';
 import TrainerText from './trainer/TrainerText/TrainerText';
+import Divider from '@material-ui/core/Divider';
 
 interface URLRouteMatchProp {
   id: string;
@@ -50,11 +51,9 @@ const PokemonDetails = () => {
       <div className={container}>
         <CardImage src={pokemon?.card.imageUrlHiRes} />
         {isPokemon ? (
-          /* Pokémon stats */
           <div className={containerPokemonInformations}>
             <Card>
               <PokemonMainInformations card={pokemon} />
-              {/* TODO: put a <Divider/> here */}
               <PokemonAttacks
                 attacks={pokemon?.card.attacks}
                 ability={pokemon?.card.ability}
