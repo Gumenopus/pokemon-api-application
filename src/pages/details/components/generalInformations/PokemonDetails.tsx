@@ -11,6 +11,7 @@ import { SpecificPokemon } from '../../../../types/Cards.types';
 import CardImage from './card/CardImage';
 import PokemonMainInformations from './pokemonName/PokemonMainInformations';
 import PokemonAttacks from './pokemonAttacks/PokemonAttacks';
+import BottomInformations from './BottomInformations/BottomInformations';
 
 interface URLRouteMatchProp {
   id: string;
@@ -50,6 +51,7 @@ const PokemonDetails = () => {
               attacks={pokemon?.card.attacks}
               ability={pokemon?.card.ability}
             />
+            <BottomInformations pokemon={pokemon} />
           </Card>
         </div>
       </div>

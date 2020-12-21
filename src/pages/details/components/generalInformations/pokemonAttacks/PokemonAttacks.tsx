@@ -49,7 +49,7 @@ const PokemonAttack = ({ attacks, ability }: SpecificAttack) => {
             <h1 key={index} className={pokemonAttackName}>
               {attacks.name}
             </h1>
-            <h1 className={pokemonAttackDamage}>70</h1>
+            <h1 className={pokemonAttackDamage}>{attacks.damage}</h1>
           </div>
           {attacks.text ? (
             <h1 key={index} className={pokemonAttackText}>

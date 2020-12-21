@@ -31,6 +31,7 @@ export interface PokemonDetails {
   ability: Abilities;
   hp: string;
   attacks: Array<Attacks>;
+  retreatCost: Array<String>;
 }
 
 export interface Abilities {
@@ -41,7 +42,6 @@ export interface Abilities {
 
 // Specific object attack;
 export interface Attacks {
-  // TODO: cost
   name: string;
   text: string;
   damage: string;

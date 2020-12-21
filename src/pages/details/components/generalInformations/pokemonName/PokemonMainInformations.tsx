@@ -5,6 +5,7 @@ import { SpecificPokemon } from 'types/Cards.types';
 import EnergyIcon from '../pokemonAttacks/energyIcon/EnergyIcon';
 
 import useStyles from './PokemonMainInformations.styles';
+import { DEFAULT_INDEX_VALUE } from '../../../constants/Constants';
 
 interface Pokemon {
   pokemon?: SpecificPokemon;
@@ -30,7 +31,7 @@ const PokemonName = ({ pokemon }: Pokemon) => {
         </div>
         <div className={containerHP}>
           <h1 className={pokemonHP}>HP {pokemon?.card.hp}</h1>
-          <EnergyIcon energyColor={pokemon?.card.types[0]} />
+          <EnergyIcon energyColor={pokemon?.card.types[DEFAULT_INDEX_VALUE]} />
         </div>
       </div>
     </React.Fragment>
