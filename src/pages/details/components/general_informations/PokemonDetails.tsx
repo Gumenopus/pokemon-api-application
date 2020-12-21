@@ -65,7 +65,7 @@ const PokemonDetails = () => {
         ) : (
           /* Trainer stats */
           <div className={containerPokemonInformations}>
-            <Card>
+            <Card className={cardProps}>
               <TrainerMainInformations card={pokemon} />
               <TrainerText card={pokemon} />
               <BottomInformations pokemon={pokemon} />
