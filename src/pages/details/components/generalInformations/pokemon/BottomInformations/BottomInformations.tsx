@@ -1,4 +1,5 @@
 /* eslint-disable */
+import Divider from '@material-ui/core/Divider';
 import { DEFAULT_INDEX_VALUE } from 'pages/details/constants/Constants';
 import React from 'react';
 import { SpecificPokemon } from 'types/Cards.types';
@@ -15,6 +16,7 @@ const BottomInformations = ({ pokemon }: PokemonProps) => {
     weaknessContainer,
     resistanceContainer,
     retreatCostContainer,
+    artistContainer,
     retreatCostIcons,
     titleFont,
     valueFont,
@@ -32,7 +34,7 @@ const BottomInformations = ({ pokemon }: PokemonProps) => {
               {pokemon?.card.weaknesses[DEFAULT_INDEX_VALUE].value}
             </h1>
           ) : (
-            <div />
+            <h1 className={valueFont}>N/A</h1>
           )}
         </div>
         <div className={resistanceContainer}>
@@ -47,7 +49,7 @@ const BottomInformations = ({ pokemon }: PokemonProps) => {
               {pokemon?.card.resistances[DEFAULT_INDEX_VALUE].value}
             </h1>
           ) : (
-            <div />
+            <h1 className={valueFont}>N/A</h1>
           )}
         </div>
         <div className={retreatCostContainer}>
@@ -58,9 +60,36 @@ const BottomInformations = ({ pokemon }: PokemonProps) => {
                 <EnergyIcon energyColor={energy} />
               ))
             ) : (
-              <div />
+              <h1 className={valueFont}>N/A</h1>
             )}
           </div>
+        </div>
+      </div>
+      <Divider variant="middle" />
+      <div className={container}>
+        <div className={artistContainer}>
+          <h1 className={titleFont}>Artist</h1>
+          {pokemon?.card.artist ? (
+            <h1 className={valueFont}>{pokemon?.card.artist}</h1>
+          ) : (
+            <h1 className={valueFont}>N/A</h1>
+          )}
+        </div>
+        <div className={artistContainer}>
+          <h1 className={titleFont}>Rarity</h1>
+          {pokemon?.card.rarity ? (
+            <h1 className={valueFont}>{pokemon?.card.rarity}</h1>
+          ) : (
+            <h1 className={valueFont}>N/A</h1>
+          )}
+        </div>
+        <div className={artistContainer}>
+          <h1 className={titleFont}>Set</h1>
+          {pokemon?.card.set ? (
+            <h1 className={valueFont}>{pokemon?.card.set}</h1>
+          ) : (
+            <h1 className={valueFont}>N/A</h1>
+          )}
         </div>
       </div>
     </React.Fragment>

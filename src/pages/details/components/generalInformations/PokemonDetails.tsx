@@ -68,6 +68,7 @@ const PokemonDetails = () => {
             <Card>
               <TrainerMainInformations card={pokemon} />
               <TrainerText card={pokemon} />
+              <BottomInformations pokemon={pokemon} />
             </Card>
           </div>
         )}

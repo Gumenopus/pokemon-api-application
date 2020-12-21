@@ -22,6 +22,11 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       alignItems: 'center',
     },
+    artistContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
     retreatCostIcons: {
       display: 'flex',
       flexDirection: 'row',
@@ -33,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     valueFont: {
       font: '16px Roboto, sans-serif',
+      color: '#818181',
     },
   }),
 );

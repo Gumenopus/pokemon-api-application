@@ -34,6 +34,10 @@ export interface PokemonDetails {
   retreatCost: Array<String>;
   resistances: Array<ResistancesAndWeakness>;
   weaknesses: Array<ResistancesAndWeakness>;
+
+  artist: string;
+  set: string;
+  rarity: string;
   /* Trainer properties */
   text: string;
 }
