@@ -16,7 +16,6 @@ import BottomInformations from './pokemon/BottomInformations/BottomInformations'
 
 import TrainerMainInformations from './trainer/TrainerMainInformations/TrainerMainInformations';
 import TrainerText from './trainer/TrainerText/TrainerText';
-import Divider from '@material-ui/core/Divider';
 
 interface URLRouteMatchProp {
   id: string;
@@ -24,7 +23,7 @@ interface URLRouteMatchProp {
 
 const PokemonDetails = () => {
   const { params } = useRouteMatch<URLRouteMatchProp>();
-  const { container, containerPokemonInformations } = useStyles();
+  const { container, containerPokemonInformations, cardProps } = useStyles();
   const [isPokemon, setIsPokemon] = useState<boolean>(false);
 
   const [pokemon, setPokemon] = useState<SpecificPokemon>();
@@ -47,12 +46,14 @@ const PokemonDetails = () => {
   }, []);
 
   return (
+    /* I didn't give so much priority for layout, so... */
     <Fragment>
       <div className={container}>
         <CardImage src={pokemon?.card.imageUrlHiRes} />
         {isPokemon ? (
+          /* Pokémon stats */
           <div className={containerPokemonInformations}>
-            <Card>
+            <Card className={cardProps}>
               <PokemonMainInformations card={pokemon} />
               <PokemonAttacks
                 attacks={pokemon?.card.attacks}
