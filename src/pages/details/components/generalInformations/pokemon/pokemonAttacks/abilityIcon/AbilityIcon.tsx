@@ -8,7 +8,7 @@ import {
   DEFAULT_ABILITY_ICON,
   POKE_BODY__ICON,
   POKE_POWER_ICON,
-} from '../.././../../constants/Constants';
+} from '../../.././../../constants/Constants';
 
 interface AbilityProp {
   ability?: Abilities;

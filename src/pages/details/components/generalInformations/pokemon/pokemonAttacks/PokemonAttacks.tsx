@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 
-import { Abilities, Attacks } from '../../../../../types/Cards.types';
+import { Abilities, Attacks } from '../../../../../../types/Cards.types';
 import AbilityIcon from './abilityIcon/AbilityIcon';
 import EnergyIcon from './energyIcon/EnergyIcon';
 

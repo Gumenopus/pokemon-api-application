@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { DEFAULT_INDEX_VALUE } from 'pages/details/constants/Constants';
 import React from 'react';
 import { SpecificPokemon } from 'types/Cards.types';
 import EnergyIcon from '../pokemonAttacks/energyIcon/EnergyIcon';
@@ -23,11 +24,31 @@ const BottomInformations = ({ pokemon }: PokemonProps) => {
       <div className={container}>
         <div className={weaknessContainer}>
           <h1 className={titleFont}>Weakness</h1>
-          <h1 className={valueFont}>2x</h1>
+          {pokemon?.card.weaknesses ? (
+            <h1 className={valueFont}>
+              <EnergyIcon
+                energyColor={pokemon?.card.weaknesses[DEFAULT_INDEX_VALUE].type}
+              />
+              {pokemon?.card.weaknesses[DEFAULT_INDEX_VALUE].value}
+            </h1>
+          ) : (
+            <div />
+          )}
         </div>
         <div className={resistanceContainer}>
           <h1 className={titleFont}>Resistance</h1>
-          <h1 className={valueFont}>2x</h1>
+          {pokemon?.card.resistances ? (
+            <h1 className={valueFont}>
+              <EnergyIcon
+                energyColor={
+                  pokemon?.card.resistances[DEFAULT_INDEX_VALUE].type
+                }
+              />
+              {pokemon?.card.resistances[DEFAULT_INDEX_VALUE].value}
+            </h1>
+          ) : (
+            <div />
+          )}
         </div>
         <div className={retreatCostContainer}>
           <h1 className={titleFont}>Retreat Cost</h1>

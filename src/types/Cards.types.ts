@@ -32,6 +32,15 @@ export interface PokemonDetails {
   hp: string;
   attacks: Array<Attacks>;
   retreatCost: Array<String>;
+  resistances: Array<ResistancesAndWeakness>;
+  weaknesses: Array<ResistancesAndWeakness>;
+  /* Trainer properties */
+  text: string;
+}
+
+interface ResistancesAndWeakness {
+  type: string;
+  value: string;
 }
 
 export interface Abilities {

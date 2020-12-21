@@ -1,17 +1,21 @@
 /* eslint-disable */
 import React, { Fragment, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import { AxiosResponse } from 'axios';
 
 import Card from '@material-ui/core/Card';
 
 import api from '../../../../service/api';
+import { SpecificPokemon } from '../../../../types/Cards.types';
 
 import useStyles from './PokemonDetails.styles';
-import { SpecificPokemon } from '../../../../types/Cards.types';
-import CardImage from './card/CardImage';
-import PokemonMainInformations from './pokemonName/PokemonMainInformations';
-import PokemonAttacks from './pokemonAttacks/PokemonAttacks';
-import BottomInformations from './BottomInformations/BottomInformations';
+import CardImage from './pokemon/card/CardImage';
+import PokemonMainInformations from './pokemon/pokemonName/PokemonMainInformations';
+import PokemonAttacks from './pokemon/pokemonAttacks/PokemonAttacks';
+import BottomInformations from './pokemon/BottomInformations/BottomInformations';
+
+import TrainerMainInformations from './trainer/TrainerMainInformations/TrainerMainInformations';
+import TrainerText from './trainer/TrainerText/TrainerText';
 
 interface URLRouteMatchProp {
   id: string;
@@ -20,17 +24,21 @@ interface URLRouteMatchProp {
 const PokemonDetails = () => {
   const { params } = useRouteMatch<URLRouteMatchProp>();
   const { container, containerPokemonInformations } = useStyles();
+  const [isPokemon, setIsPokemon] = useState<boolean>(false);
 
   const [pokemon, setPokemon] = useState<SpecificPokemon>();
 
   async function getClickedPokemonInformations(): Promise<void> {
-    /* 
-      Yeah, well... I'm doing a request each time that I click in one object.
-      I'm sorry for that, but I still don't know a better way to do that :p 
-      TODO: fix that
-    */
     const response = await api.get<SpecificPokemon>(`cards/${params.id}`);
     setPokemon(response.data);
+
+    setIfCardIsPokemon(response);
+  }
+
+  function setIfCardIsPokemon(response: AxiosResponse<SpecificPokemon>) {
+    if (response.data.card.supertype === 'Pokémon') {
+      setIsPokemon(true);
+    }
   }
 
   useEffect(() => {
@@ -40,20 +48,29 @@ const PokemonDetails = () => {
   return (
     <Fragment>
       <div className={container}>
-        <CardImage src={pokemon?.card.imageUrlHiRes}></CardImage>
-        <div className={containerPokemonInformations}>
-          <Card>
-            <PokemonMainInformations
-              pokemon={pokemon}
-            ></PokemonMainInformations>
-            {/* TODO: put a <Divider/> here */}
-            <PokemonAttacks
-              attacks={pokemon?.card.attacks}
-              ability={pokemon?.card.ability}
-            />
-            <BottomInformations pokemon={pokemon} />
-          </Card>
-        </div>
+        <CardImage src={pokemon?.card.imageUrlHiRes} />
+        {isPokemon ? (
+          /* Pokémon stats */
+          <div className={containerPokemonInformations}>
+            <Card>
+              <PokemonMainInformations card={pokemon} />
+              {/* TODO: put a <Divider/> here */}
+              <PokemonAttacks
+                attacks={pokemon?.card.attacks}
+                ability={pokemon?.card.ability}
+              />
+              <BottomInformations pokemon={pokemon} />
+            </Card>
+          </div>
+        ) : (
+          /* Trainer stats */
+          <div className={containerPokemonInformations}>
+            <Card>
+              <TrainerMainInformations card={pokemon} />
+              <TrainerText card={pokemon} />
+            </Card>
+          </div>
+        )}
       </div>
     </Fragment>
   );
