@@ -3,7 +3,7 @@ import Divider from '@material-ui/core/Divider';
 import { DEFAULT_INDEX_VALUE } from 'pages/details/constants/Constants';
 import React from 'react';
 import { SpecificPokemon } from 'types/Cards.types';
-import EnergyIcon from '../pokemon_attacks/EnergyIcon/EnergyIcon';
+import EnergyIcon from '../../EnergyIcon/EnergyIcon';
 import useStyles from './BottomInformations.styles';
 
 interface PokemonProps {

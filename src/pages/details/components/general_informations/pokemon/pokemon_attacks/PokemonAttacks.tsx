@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Abilities, Attacks } from '../../../../../../types/Cards.types';
 import AbilityIcon from './AbilityIcon/AbilityIcon';
-import EnergyIcon from './EnergyIcon/EnergyIcon';
+import EnergyIcon from '../../EnergyIcon/EnergyIcon';
 
 import useStyles from './PokemonAttacks.styles';
 
